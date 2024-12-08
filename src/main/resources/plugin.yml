@@ -5,5 +5,7 @@ version: '${project.version}'
 author: NightExpress
 depend:
   - nightcore
+softdepend:
+  - GemsEconomy
 load: STARTUP
 api-version: 1.19
