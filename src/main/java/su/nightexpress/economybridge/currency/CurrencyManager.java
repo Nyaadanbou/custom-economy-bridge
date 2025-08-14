@@ -110,13 +110,7 @@ public class CurrencyManager extends AbstractManager<BridgePlugin> {
             CoinsEngineCurrency.getCurrencies().forEach(this::registerCurrency);
         });
 
-        this.pluginProviders.put(CurrencyPlugins.ULTRA_ECONOMY, () -> {
-            UltraEconomyCurrency.getCurrencies().forEach(this::registerCurrency);
-        });
-
-        this.pluginProviders.put(CurrencyPlugins.GEMS_ECONOMY, () -> {
-            GemsEconomyCurrency.getCurrencies().forEach(this::loadCurrency);
-        });
+        this.pluginProviders.put(CurrencyPlugins.ECONOMY, () -> EconomyCurrency.getCurrencies().forEach(this::registerCurrency));
 
         // Try load any provider(s) of the plugins that are already enabled aka loaded.
         this.pluginProviders.keySet().forEach(pluginName -> {

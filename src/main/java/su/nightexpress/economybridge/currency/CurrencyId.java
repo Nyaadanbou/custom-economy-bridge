@@ -10,12 +10,8 @@ public class CurrencyId {
     public static final String XP_POINTS = "xp_points";
 
     public static final String COINS_ENGINE_PREFIX  = "coinsengine_";
-    public static final String ULTRA_ECONOMY_PREFIX = "ultraeconomy_";
+    public static final String ECONOMY_PREFIX       = "economy_";
 
-    public static final String PLAYER_POINTS = "playerpoints";
-    public static final String BEAST_TOKENS  = "beasttokens";
-    public static final String VOTING_PLUGIN = "votingplugin";
-    public static final String ELITE_MOBS    = "elitemobs";
     public static final String VAULT         = "vault";
 
     @NotNull
@@ -24,8 +20,8 @@ public class CurrencyId {
     }
 
     @NotNull
-    public static String forUltraEconomy(@NotNull String id) {
-        return ULTRA_ECONOMY_PREFIX + id.toLowerCase();
+    public static String forEconomy(@NotNull String id) {
+        return ECONOMY_PREFIX + id.toLowerCase();
     }
 
     @NotNull
