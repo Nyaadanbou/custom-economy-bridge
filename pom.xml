@@ -58,18 +58,8 @@
         </repository>
 
         <repository>
-            <id>rosewood-repo</id>
-            <url>https://repo.rosewooddev.io/repository/public/</url>
-        </repository>
-
-        <repository>
-            <id>BenCodez Repo</id>
-            <url>https://nexus.bencodez.com/repository/maven-public/</url>
-        </repository>
-
-        <repository>
-            <id>techscode</id>
-            <url>https://repo.techscode.com/repository/techscode-apis/</url>
+            <id>nyaadanbou-private</id>
+            <url>https://repo.mewcraft.cc/private</url>
         </repository>
     </repositories>
 
@@ -105,37 +95,29 @@
         <!-- Currency/Economy hooks -->
 
         <dependency>
+            <groupId>su.nightexpress.coinsengine</groupId>
+            <artifactId>CoinsEngine</artifactId>
+            <version>2.4.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>cc.mewcraft.economy</groupId>
             <artifactId>api</artifactId>
             <version>2.2.0</version>
         </dependency>
+
+        <!-- Item Bridge -->
+
+        <dependency>
+            <groupId>su.nightexpress.excellentcrates</groupId>
+            <artifactId>ExcellentCrates</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>rsync-after-package</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>rsync</executable>
-                            <arguments>
-                                <argument>-avz</argument>
-                                <argument>${project.build.directory}/${project.build.finalName}.jar</argument>
-                                <argument>dev:data/hub/plugins</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
         <resources>
             <resource>
                 <directory>src/main/resources</directory> <!-- (your resources folder location) -->
