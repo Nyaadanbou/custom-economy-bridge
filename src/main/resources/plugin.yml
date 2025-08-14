@@ -6,6 +6,6 @@ author: NightExpress
 depend:
   - nightcore
 softdepend:
-  - GemsEconomy
+  - Economy
 load: STARTUP
 api-version: 1.19
